@@ -24,6 +24,7 @@ import { ShopService } from './shop/shop.service';
 import { ShopModule } from './shop/shop.module';
 import { Shop } from "./shop/shop.model";
 import { UserShop } from "./shop/user_items.model";
+import { TweetsModule } from './tweets/tweets.module';
 
 @Module({
     controllers: [],
@@ -52,7 +53,8 @@ import { UserShop } from "./shop/user_items.model";
         FilesModule,
         EventsModule,
         AchievementsModule,
-        ShopModule
+        ShopModule,
+        TweetsModule
     ]
 })
 export class AppModule{}
