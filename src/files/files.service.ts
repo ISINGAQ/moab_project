@@ -10,7 +10,7 @@ export class FilesService {
       try{
         console.log("bingo1")
           const fileName = uuid.v4() + '.png';
-          const filePath = path.resolve('C:\\database', 'public')
+          const filePath = path.resolve(__dirname, '..', 'static')
           if(!fs.existsSync(filePath)){
             console.log("bingo2")
             fs.mkdirSync(filePath, {recursive: true})
@@ -28,7 +28,7 @@ export class FilesService {
     try{
       console.log("bingo1")
       const fileName = uuid.v4() + '.pdf';
-      const filePath = path.resolve('C:\\database', 'public')
+      const filePath = path.resolve(__dirname, '..', 'static')
       if(!fs.existsSync(filePath)){
         console.log("bingo2")
         fs.mkdirSync(filePath, {recursive: true})
@@ -46,7 +46,7 @@ export class FilesService {
     try{
       console.log("bingo1")
       const fileName = uuid.v4() + '.pdf';
-      const filePath = path.resolve('C:\\database', 'public')
+      const filePath = path.resolve(__dirname, '..', 'static')
       if(!fs.existsSync(filePath)){
         console.log("bingo2")
         fs.mkdirSync(filePath, {recursive: true})

@@ -31,18 +31,18 @@ import { TweetsModule } from './tweets/tweets.module';
     providers: [],
     imports: [
       ConfigModule.forRoot({
-         envFilePath: `.${process.env.NODE_ENV}.env`
+         envFilePath: `.env`
       }),
       ServeStaticModule.forRoot({
-        rootPath: path.resolve('C:\\database', 'public'),
+        rootPath: path.resolve(__dirname,'static'),
       }),
         SequelizeModule.forRoot({
             dialect: 'postgres',
-            host: 'localhost',
-            port: 5432,
-            username: "postgres",
-            password: 'me4ninglessC0de',
-            database: 'moab',
+            host: process.env.POSTGRES_HOST,
+            port: Number(process.env.POSTGRES_PORT),
+            username: process.env.POSTGRES_USER,
+            password: process.env.POSTGRES_PASSWORD,
+            database: process.env.POSTGRES_DB,
             models: [User, Role, UserRoles, Post, Event, Achievements, UserInfo, AchievementType, AchievementGrade, Shop, UserShop],
             autoLoadModels: true
         }),
