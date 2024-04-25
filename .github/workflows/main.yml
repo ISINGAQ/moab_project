@@ -1,0 +1,20 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - backend
+jobs:
+  Build-and-Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect via SSH and Deploy
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: 158.160.8.34
+          username: isingaq
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/isingaq/moab
+            git  pull
+            docker compose down
+            docker compose up -d --build
