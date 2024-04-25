@@ -14,7 +14,7 @@ jobs:
           username: isingaq
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/isingaq/moab
+            cd /home/isingaq/moab/moab_project
             git  pull
             docker compose down
             docker compose up -d --build
