@@ -14,7 +14,7 @@ export class AuthController {
     console.log("bingo4")
     return this.authService.login(userDto)
   }
-
+  //absolute trash
   @Post('/registration')
   registration(@Body() userDto: CreateUserDto){
     return this.authService.registration(userDto)
